@@ -17,8 +17,10 @@ class Tower {
   }
 
   attack(target, ...nextTargets) {
-    target.life -= this.damage;
-    while (this.bounce > 0) this.attack(nextTargets);
+    if (target) {
+      target.life -= this.damage;
+      while (this.bounce > 0) this.attack(nextTargets);
+    }
   }
 }
 
